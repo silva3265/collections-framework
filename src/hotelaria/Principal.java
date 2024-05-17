@@ -12,24 +12,23 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
-//        cadastro.adicionar("Vila Selvagem", "Fortim/CE", 1400); // se cadastrar esse hotel vai lançar a exceção
+//        cadastro.remover(new Hotel("Vila Selvagem", "Fortim/CE", 0));
+//        cadastro.removerPorCidade("Fortim/CE");
+//        cadastro.removerTodos();
 
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
-//        int indice = hoteis.indexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0)); indexOf - se ele encontar ele vai retornar um indice
-        int indice = hoteis.lastIndexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0)); /* lastIndexOf - faz a pesquisa do indice, mais começando do final */
-        System.out.println(indice);
-
-//        System.out.println(hoteis.get(indice));
-
-//        imprimirHoteis(hoteis);
+//        hoteis.set(3, new Hotel("Teste", "Teste", 0)); /* hoteis.set - vai substituir aquela posição especifica */
+//        hoteis.add(3, new Hotel("Teste", "Teste", 0));
+        imprimirHoteis(hoteis);
     }
 
-    private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
+    private static void imprimirHoteis(ArrayList<Hotel> hoteis) { /* ArrayList - ele usa array internamente, a performace pode ser ruim */
         for (int i = 0; i < hoteis.size(); i++) {
             Hotel hotel = hoteis.get(i);
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
                     hotel.getCidade(), hotel.getPrecoDiaria());
         }
     }
+    /* é recomendado que as adições de novos elemntos sejam feitos no final, e nao substituir posições ja existentes */
 
 }
