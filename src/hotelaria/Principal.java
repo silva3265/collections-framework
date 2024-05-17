@@ -12,8 +12,16 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
+//        cadastro.adicionar("Vila Selvagem", "Fortim/CE", 1400); // se cadastrar esse hotel vai lançar a exceção
+
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
-        imprimirHoteis(hoteis);
+//        int indice = hoteis.indexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0)); indexOf - se ele encontar ele vai retornar um indice
+        int indice = hoteis.lastIndexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0)); /* lastIndexOf - faz a pesquisa do indice, mais começando do final */
+        System.out.println(indice);
+
+//        System.out.println(hoteis.get(indice));
+
+//        imprimirHoteis(hoteis);
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
