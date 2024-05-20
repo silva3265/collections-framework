@@ -26,8 +26,7 @@ public class CadastroHotel {
         while (hotelIterator.hasNext()) {
             Hotel hotel = hotelIterator.next();
             if (hotel.getCidade().equals(cidade)) {
-                hotelIterator.remove(); // vai gerenciar essa remoção
-//                hoteis.remove(hotel);
+                hotelIterator.remove();
             }
         }
     }

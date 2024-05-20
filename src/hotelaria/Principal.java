@@ -1,7 +1,8 @@
 package hotelaria;
 
 import java.util.ArrayList;
-import java.util.Iterator; /* Iterator é um componente que permite iterar em uma coleção de elementos, um por um */
+import java.util.Iterator;
+import java.util.ListIterator;
 
 public class Principal {
 
@@ -13,19 +14,24 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
-//        cadastro.removerPorCidade("Fortim/CE");  
-
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
         imprimirHoteis(hoteis);
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
-        Iterator<Hotel> hotelIterator = hoteis.iterator(); /* hoteis.iterator() - vai buscar um objeto do tipo iterator */
-        while (hotelIterator.hasNext()) { // hasNext() - siguinfica 'tem proximo?', ele retorna um boleano
-            Hotel hotel = hotelIterator.next();
+        ListIterator<Hotel> hotelIterator = hoteis.listIterator(hoteis.size());
+        while (hotelIterator.hasPrevious()) { /* hasPrevious() - 'tem algum elemnto anterior', vai percorrer ao contrario*/
+            Hotel hotel = hotelIterator.previous();
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
                     hotel.getCidade(), hotel.getPrecoDiaria());
         }
+
+//        Iterator<Hotel> hotelIterator = hoteis.iterator();
+//        while (hotelIterator.hasNext()) {
+//            Hotel hotel = hotelIterator.next();
+//            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
+//                    hotel.getCidade(), hotel.getPrecoDiaria());
+//        }
     }
 
 }
