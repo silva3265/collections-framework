@@ -1,6 +1,7 @@
 package hotelaria;
 
 import java.util.ArrayList;
+import java.util.Iterator; /* Iterator é um componente que permite iterar em uma coleção de elementos, um por um */
 
 public class Principal {
 
@@ -12,23 +13,19 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
-//        cadastro.remover(new Hotel("Vila Selvagem", "Fortim/CE", 0));
-//        cadastro.removerPorCidade("Fortim/CE");
-//        cadastro.removerTodos();
+//        cadastro.removerPorCidade("Fortim/CE");  
 
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
-//        hoteis.set(3, new Hotel("Teste", "Teste", 0)); /* hoteis.set - vai substituir aquela posição especifica */
-//        hoteis.add(3, new Hotel("Teste", "Teste", 0));
         imprimirHoteis(hoteis);
     }
 
-    private static void imprimirHoteis(ArrayList<Hotel> hoteis) { /* ArrayList - ele usa array internamente, a performace pode ser ruim */
-        for (int i = 0; i < hoteis.size(); i++) {
-            Hotel hotel = hoteis.get(i);
+    private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
+        Iterator<Hotel> hotelIterator = hoteis.iterator(); /* hoteis.iterator() - vai buscar um objeto do tipo iterator */
+        while (hotelIterator.hasNext()) { // hasNext() - siguinfica 'tem proximo?', ele retorna um boleano
+            Hotel hotel = hotelIterator.next();
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
                     hotel.getCidade(), hotel.getPrecoDiaria());
         }
     }
-    /* é recomendado que as adições de novos elemntos sejam feitos no final, e nao substituir posições ja existentes */
 
 }

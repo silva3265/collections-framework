@@ -1,6 +1,7 @@
 package hotelaria;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CadastroHotel {
 
@@ -14,7 +15,6 @@ public class CadastroHotel {
         }
 
         hoteis.add(hotel);
-//        hoteis.add(0, hotel);
     }
 
     public ArrayList<Hotel> obterTodos() {
@@ -22,30 +22,26 @@ public class CadastroHotel {
     }
 
     public void removerPorCidade(String cidade) {
-        ArrayList<Hotel> hoteisParaRemocao = new ArrayList<>();
-
-        for (int i = 0; i < hoteis.size(); i++) { /* Vai percorrer cada hotel */
-            Hotel hotel = hoteis.get(i); /* a variavel hotel vai receber 'hoteis.get(i)'*/
-            if (hotel.getCidade().equals(cidade)) { /* comparação de objetos " equals "*/
-                hoteisParaRemocao.add(hotel);
-//                hoteis.remove(i); /* vai remover o indice que esta no (i)*/
-//                i--;
+        Iterator<Hotel> hotelIterator = hoteis.iterator();
+        while (hotelIterator.hasNext()) {
+            Hotel hotel = hotelIterator.next();
+            if (hotel.getCidade().equals(cidade)) {
+                hotelIterator.remove(); // vai gerenciar essa remoção
+//                hoteis.remove(hotel);
             }
         }
-
-        hoteis.removeAll(hoteisParaRemocao); // removeAll - remover todos 
     }
 
     public void remover(Hotel hotel) {
         boolean removido = hoteis.remove(hotel);
 
-        if (!removido) { // se Nao for removido lança uma exceção 
+        if (!removido) {
             throw new HotelNaoEncontradoException("Hotel não encontrado para remoção");
         }
     }
 
     public void removerTodos() {
-        hoteis.clear(); // esse metodo clear vai limpar sua lista, vai remover todos os objetos da lista 
+        hoteis.clear();
     }
 
 }
