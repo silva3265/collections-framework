@@ -1,11 +1,12 @@
 package hotelaria;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Vector;
+import java.util.List;
 
 public class CadastroHotel {
 
-    private final Vector<Hotel> hoteis = new Vector<>();
+    private final List<Hotel> hoteis = new ArrayList<>();
 
     public void adicionar(String nome, String cidade, double precoDiaria) {
         Hotel hotel = new Hotel(nome, cidade, precoDiaria);
@@ -17,7 +18,7 @@ public class CadastroHotel {
         hoteis.add(hotel);
     }
 
-    public Vector<Hotel> obterTodos() {
+    public List<Hotel> obterTodos() {
         return hoteis;
     }
 
