@@ -1,8 +1,6 @@
 package hotelaria;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.LinkedList;
 
 public class Principal {
 
@@ -14,24 +12,15 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
-        ArrayList<Hotel> hoteis = cadastro.obterTodos();
+        LinkedList<Hotel> hoteis = cadastro.obterTodos();
         imprimirHoteis(hoteis);
     }
 
-    private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
-        ListIterator<Hotel> hotelIterator = hoteis.listIterator(hoteis.size());
-        while (hotelIterator.hasPrevious()) { /* hasPrevious() - 'tem algum elemnto anterior', vai percorrer ao contrario*/
-            Hotel hotel = hotelIterator.previous();
+    private static void imprimirHoteis(LinkedList<Hotel> hoteis) {
+        for (Hotel hotel : hoteis) {
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
                     hotel.getCidade(), hotel.getPrecoDiaria());
         }
-
-//        Iterator<Hotel> hotelIterator = hoteis.iterator();
-//        while (hotelIterator.hasNext()) {
-//            Hotel hotel = hotelIterator.next();
-//            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
-//                    hotel.getCidade(), hotel.getPrecoDiaria());
-//        }
     }
 
 }
