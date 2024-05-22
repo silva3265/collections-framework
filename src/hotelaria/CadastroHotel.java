@@ -22,6 +22,17 @@ public class CadastroHotel {
         return hoteis;
     }
 
+    /* Convers�o de Listas para Array */
+    public Hotel[] obterTodosComoArray() {
+        return hoteis.toArray(new Hotel[0]);
+
+//        Hotel[] hoteis2 = new Hotel[hoteis.size()];
+//        for (int i = 0; i < hoteis.size(); i++) {
+//            hoteis2[i] = hoteis.get(i);
+//        }
+//        return hoteis2;
+    }
+
     public void removerPorCidade(String cidade) {
         Iterator<Hotel> hotelIterator = hoteis.iterator();
         while (hotelIterator.hasNext()) {
