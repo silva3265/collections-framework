@@ -1,6 +1,7 @@
 package hotelaria;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -32,6 +33,11 @@ public class CadastroHotel {
 //        }
 //        return hoteis2;
     }
+    
+//    public void ordenar() {
+//    	
+//    	Collections.sort(hoteis);
+//    }
 
     public void removerPorCidade(String cidade) {
         Iterator<Hotel> hotelIterator = hoteis.iterator();
