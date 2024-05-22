@@ -1,11 +1,11 @@
 package hotelaria;
 
 import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.Vector;
 
 public class CadastroHotel {
 
-    private final LinkedList<Hotel> hoteis = new LinkedList<>();
+    private final Vector<Hotel> hoteis = new Vector<>();
 
     public void adicionar(String nome, String cidade, double precoDiaria) {
         Hotel hotel = new Hotel(nome, cidade, precoDiaria);
@@ -17,7 +17,7 @@ public class CadastroHotel {
         hoteis.add(hotel);
     }
 
-    public LinkedList<Hotel> obterTodos() {
+    public Vector<Hotel> obterTodos() {
         return hoteis;
     }
 

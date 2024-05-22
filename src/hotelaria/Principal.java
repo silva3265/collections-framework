@@ -1,6 +1,6 @@
 package hotelaria;
 
-import java.util.LinkedList;
+import java.util.Vector;
 
 public class Principal {
 
@@ -12,11 +12,11 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
-        LinkedList<Hotel> hoteis = cadastro.obterTodos();
+        Vector<Hotel> hoteis = cadastro.obterTodos();
         imprimirHoteis(hoteis);
     }
 
-    private static void imprimirHoteis(LinkedList<Hotel> hoteis) {
+    private static void imprimirHoteis(Vector<Hotel> hoteis) {
         for (Hotel hotel : hoteis) {
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
                     hotel.getCidade(), hotel.getPrecoDiaria());
