@@ -1,9 +1,6 @@
 package hotelaria;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class CadastroHotel {
 
@@ -23,21 +20,14 @@ public class CadastroHotel {
         return hoteis;
     }
 
-    /* Convers�o de Listas para Array */
     public Hotel[] obterTodosComoArray() {
         return hoteis.toArray(new Hotel[0]);
-
-//        Hotel[] hoteis2 = new Hotel[hoteis.size()];
-//        for (int i = 0; i < hoteis.size(); i++) {
-//            hoteis2[i] = hoteis.get(i);
-//        }
-//        return hoteis2;
     }
-    
-//    public void ordenar() {
-//    	
-//    	Collections.sort(hoteis);
-//    }
+
+    public void ordenar() {
+        Collections.sort(hoteis); /* vai trazer os hoteis na sequencia ordenada */
+//        Collections.sort(hoteis, Comparator.reverseOrder());
+    }
 
     public void removerPorCidade(String cidade) {
         Iterator<Hotel> hotelIterator = hoteis.iterator();
