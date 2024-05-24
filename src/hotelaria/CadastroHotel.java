@@ -25,8 +25,13 @@ public class CadastroHotel {
     }
 
     public void ordenar() {
-        Collections.sort(hoteis); /* vai trazer os hoteis na sequencia ordenada */
-//        Collections.sort(hoteis, Comparator.reverseOrder());
+        Collections.sort(hoteis);
+    }
+
+    public void ordenarPorPreco() {
+//        Collections.sort(hoteis, new PrecoHotelComparator());
+        hoteis.sort(new PrecoHotelComparator().reversed()
+                .thenComparing(Comparator.naturalOrder()));
     }
 
     public void removerPorCidade(String cidade) {

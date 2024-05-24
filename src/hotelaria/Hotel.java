@@ -2,7 +2,7 @@ package hotelaria;
 
 import java.util.Objects;
 
-public class Hotel implements Comparable<Hotel> { /* Atraves dessa interface transformamaos essa classe 'Comparavel '*/
+public class Hotel implements Comparable<Hotel> {
 
     private String nome;
     private String cidade;
@@ -69,22 +69,7 @@ public class Hotel implements Comparable<Hotel> { /* Atraves dessa interface tra
 
     @Override
     public int compareTo(Hotel o) {
-        return getNome().compareTo(o.getNome()); // 4 - opção (recomendada )
-
-          // 3- opção
-//        return Double.compare(getPrecoDiaria(), o.getPrecoDiaria());
-          
-          // 2- opção	
-//        return Double.valueOf(getPrecoDiaria())
-//                .compareTo(Double.valueOf(o.getPrecoDiaria()));
-
-          // 1- opção	
-//        if (this.getPrecoDiaria() < o.getPrecoDiaria()) {
-//            return -1; /* a gente retorna negativo se esse objeto this for menor que o objeto do argumento */
-//        } else if (this.getPrecoDiaria() > o.getPrecoDiaria()) {
-//            return 1; /* se for retorna um numero positivo */
-//        }
-//        return 0;
+        return getNome().compareTo(o.getNome());
     }
 
 }
