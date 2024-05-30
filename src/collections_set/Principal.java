@@ -1,12 +1,13 @@
 package collections_set;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Principal {
 
     public static void main(String[] args) {
-        Set<Contato> contatos = new TreeSet<>(); // Vai ordenar pela a ordem natural inserida, mais com a performace ruim
+        Set<Contato> contatos = new LinkedHashSet<>(); // Vai ordenar pela a ordem natural inserida, mais com a performace ruim
 //        Set<Contato> contatos = new TreeSet<>(new IdadeContatoComparator());
 
         System.out.println("---");
@@ -17,11 +18,7 @@ public class Principal {
         contatos.add(new Contato("João", "joao@algaworks.com", 70));
         System.out.println("---");
 
-//        contatos.add(new Contato("Maria", "maria@algaworks.com", 20));
-//        contatos.add(new Contato("Manoel", "manoel@algaworks.com", 40));
-
-//        contatos.add(null);
-//        contatos.add(new Contato("Ana Silva", "ana@algaworks.com", 10));
+        contatos.add(null); // aceita apenas um valor nullo
 
         for (Contato contato : contatos) {
             System.out.println(contato);
