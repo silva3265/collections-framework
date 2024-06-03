@@ -44,8 +44,8 @@ public class Estado implements Comparable<Estado> {
     }
 
     @Override
-    public int compareTo(Estado o) {
-        return getSigla().compareTo(o.getSigla());
+    public int compareTo(Estado o) { 
+        return getSigla().compareTo(o.getSigla()); // Comparando a sigla
     }
 
 }
