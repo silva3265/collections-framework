@@ -1,6 +1,7 @@
 package collections_map;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Principal {
 
@@ -19,7 +20,7 @@ public class Principal {
         Carro porsche = new Carro("EJA0V44", "Porsche 911");
 
         //HashMap<> - é o mais usado, mais nao garante a ordem das chaves
-        Map<Carro, Proprietario> proprietarios = new HashMap<>(); //Map<k, V>, chave, valor
+        Map<Carro, Proprietario> proprietarios = new LinkedHashMap<>(); //Map<k, V>, chave, valor
 //        Map<Carro, Proprietario> proprietarios = new Hashtable<>(); /* Hashtable - ele nao permite nem valor e nem chave nula */
         proprietarios.put(bmw, maria); //put (colocar) - para adicionar 
         proprietarios.put(honda, ana);
