@@ -21,7 +21,7 @@ public class Venda {
     public double getValorTotal() {
         return valorTotal;
     }
-
+ 
     public List<ItemVenda> getItens() {
         return Collections.unmodifiableList(itens); /* vai retornar um coleção que permita somente leitura,  'unmodifiableList' - coleção nao modificavel   */
 //        return new ArrayList<>(itens);

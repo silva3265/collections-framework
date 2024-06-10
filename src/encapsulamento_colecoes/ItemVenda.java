@@ -11,7 +11,7 @@ public final class ItemVenda {
         Objects.requireNonNull(descricao);
 
         if (valor < 0) {
-            throw new IllegalArgumentException("Valor do item deve ser positivo");
+            throw new  IllegalArgumentException("Valor do item deve ser positivo");
         }
 
         this.descricao = descricao;
